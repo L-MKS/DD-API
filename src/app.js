@@ -34,7 +34,7 @@ const classes = [
         ability: [
             {
                 ability_id: 1,
-                name: "Sneack Attack"
+                name: "Sneak Attack"
             }, 
             {
                 ability_id: 2,
@@ -56,16 +56,16 @@ const classes = [
 ]
 
 app.get('/', (req, res) => {
-    res.status(200).send("HOME HERE")
+    res.send("HOME HERE")
 })
 
 app.get('/classes', (req, res) => {
-    res.status(200).json(classes)
+    res.json(classes)
 })
 
 app.post('/classes', (req, res) => {
     classes.push(req.body)
-    res.status(201).send("Class added successfully")
+    res.send("Class added successfully")
 })
 
 app.put('/classes/:id', (req, res) => {
